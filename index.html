@@ -496,7 +496,7 @@ function wa(t){open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')
 function s3(){const g=i=>$(i).value.trim();
  const t=`Hola, vengo del verificador de Nexus Data Group ✅\nNombre: ${g('fn')} ${g('ln')}\nTeléfono: ${$('cc').value}${g('ph')}\nCorreo: ${g('em')}\nPaís: ${g('co')} · Ciudad: ${g('ci')}\nCómo conoció Nexus: ${$('how').value}\nRecomendado por: ${g('rec')||'—'}\nModelo: ${verified}\nTrabaja en otra plataforma: ${hasExp?g('plat')+' (bloqueo previo: '+$('blk').value+')':'No'}\nSolicito mi código de acceso.`;
  wa(t);go(4)}
-const CODES=['NX-482915'],ev=()=>{};
+const CODES=[((window.NEXUS_RANK||{}).code||'NX-341372').toUpperCase()],ev=()=>{};
 function s4(){const c=$('code').value.trim().toUpperCase();if(CODES.includes(c)){setMsg('cmsg','✅ Código válido. ¡Bienvenido a Nexus!','ok');boom();setTimeout(()=>go(5),700)}else{setMsg('cmsg','Código incorrecto. Revisa el que te enviamos por WhatsApp (formato NX-000000).','bad');$('code').classList.remove('shake');void $('code').offsetWidth;$('code').classList.add('shake')}}
 function cchk(){$('cgo').disabled=!($('c1').checked&&$('c2').checked)}
 function commit(n){target={n};$('c1').checked=$('c2').checked=false;cchk();openM('commit')}
